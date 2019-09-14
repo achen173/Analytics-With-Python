@@ -1,14 +1,13 @@
 #!/usr/bin/python
-import sys
-import matplotlib
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
 import seaborn as sns
-#import datetime
 import operator
 from datetime import date
-# CICS 397A Homework 1 
+
+
+# CICS 397A Homework 1
 #  
 # Fill in the bodies of the missing functions as specified by the comments.
 #
@@ -46,14 +45,13 @@ def main(file_name):
 # Do not return a tuple for the header row.  While you can process the rawtext using string 
 # functions, to receive full credit you must use Python's built in csv module.  
 #    
-def read_data(file_name = 'mustard_data.csv'):
-
+def read_data(file_name='mustard_data.csv'):
     with open(file_name) as f:
         input = f.readlines()
         rows = []
         i = 1
         while i < len(input):
-            newStr = [ '{}'.format(x) for x in list(csv.reader([input[i]], delimiter=',', quotechar='"'))[0] ]
+            newStr = ['{}'.format(x) for x in list(csv.reader([input[i]], delimiter=',', quotechar='"'))[0]]
             j = 0
             t_arr = []
             while j < len(newStr):
@@ -68,7 +66,7 @@ def read_data(file_name = 'mustard_data.csv'):
                         t0 = date.min
                     t_arr.append(t0)
                 if (j == 1):
-                    if(len(newStr[j]) == 0):
+                    if (len(newStr[j]) == 0):
                         t_arr.append(int(0))
                     else:
                         fishy = int(newStr[j])
@@ -104,7 +102,8 @@ def total_cost(rows):
     for x in rows:
         tcost += x[-1]
     print("$%.2f" % tcost)
-    return(tcost)
+    return (tcost)
+
 
 # Exercise 2. (5 points)
 #
@@ -117,12 +116,13 @@ def least_common_locs(rows):
     # fill in function body here
     #
     for x in rows:
-        if(x[2] not in location):
+        if (x[2] not in location):
             location.append(x[2])
-        elif(x[2] in location):
+        elif (x[2] in location):
             location.remove(x[2])
     print(location)
     return location
+
 
 # Exercise 3. (8 points)
 #
@@ -140,10 +140,10 @@ def most_common_locs(rows):
     for x in rows:
         place = x[2]
         visits = pathways.get(place)
-        if(visits == None):
+        if (visits == None):
             pathways[place] = 1
         else:
-            pathways.update({place : visits + 1})
+            pathways.update({place: visits + 1})
     TheList = sorted(list(pathways.items()), key=operator.itemgetter(1), reverse=True)[:10]
     for x in TheList:
         print(x)
@@ -203,7 +203,7 @@ def unique_dates(rows):
         elif [month, day] in udays:
             udays.remove([month, day])
     print(len(udays))
-    return(len(udays))
+    return (len(udays))
     #
     # fill in function body here
     #
@@ -237,8 +237,8 @@ def month_avg(rows):
                 all.get(month_name).append(price)
     ans = []
     for key in sorted(all.keys()):
-        print("%s  $%.2f" % (date(1900, key, 1).strftime('%B'), sum(all.get(key))/len(all.get(key))))
-        ans.append((date(1900, key, 1).strftime('%B'), sum(all.get(key))/len(all.get(key))))
+        print("%s  $%.2f" % (date(1900, key, 1).strftime('%B'), sum(all.get(key)) / len(all.get(key))))
+        ans.append((date(1900, key, 1).strftime('%B'), sum(all.get(key)) / len(all.get(key))))
     return ans
     #
     # fill in function body here
@@ -263,7 +263,7 @@ def highest_thirty(rows):
     ans = []
     while i < len(rows):
         startdate = rows[i][0]
-        if(startdate == date.min):
+        if (startdate == date.min):
             i += 1
             continue
         j = i
@@ -276,7 +276,7 @@ def highest_thirty(rows):
             if (rows[j][0] - startdate).days <= 30:
                 enddate = rows[j][0]
                 miles += rows[j][1]
-            elif((rows[j][0] - startdate).days > 30):
+            elif ((rows[j][0] - startdate).days > 30):
                 break
             j += 1
         ans.append((startdate, enddate, miles))
@@ -284,13 +284,13 @@ def highest_thirty(rows):
     ans.sort(key=lambda tup: tup[2], reverse=True)
     output = [ans[0]]
     var = 1
-    print(output[-1][0], output[-1][1], str(output[-1][2])+" miles")
+    print(output[-1][0], output[-1][1], str(output[-1][2]) + " miles")
     while len(output) < 3:
         startdate123 = (ans[var])[0]
         last_end = output[-1][1]
-        if(startdate123 >= last_end):
+        if (startdate123 >= last_end):
             output.append(tuple(ans[var]))
-            print(output[-1][0], output[-1][1], str(output[-1][2])+" miles")
+            print(output[-1][0], output[-1][1], str(output[-1][2]) + " miles")
         var += 1
     return output
     #
@@ -326,7 +326,7 @@ def plot_monthly(rows):
     amount = []
     for key in sorted(all.keys()):
         label_month.append((date(1900, key, 1).strftime('%B')))
-        amount.append(sum(all.get(key))/1000000)
+        amount.append(sum(all.get(key)) / 1000000)
         ans.append((date(1900, key, 1).strftime('%B'), sum(all.get(key))))
     y_pos = np.arange(len(label_month))
     plt.bar(y_pos, amount, align='center', alpha=0.5)
@@ -337,6 +337,7 @@ def plot_monthly(rows):
     plt.title('MILEAGE PER MONTH')
     plt.tight_layout()
     plt.savefig('mustard_months.pdf')
+    plt.close()
     return ans
     #
     # fill in function body here
@@ -357,17 +358,18 @@ def plot_mpg(rows):
     dates = []
     values = []
     for x in rows:
-        if(x[0] != date.min and x[1] != 0 and x[3] != 0):
-            if(x[1]/x[3]) > 20000:
+        if (x[0] != date.min and x[1] != 0 and x[3] != 0):
+            if (x[1] / x[3]) > 20000:
                 print(x)
             dates.append(x[0])
-            values.append(x[1]/x[3])
+            values.append(x[1] / x[3])
     plt.plot(dates, values)
     plt.ylabel('AVERAGE MILES PER GALLON (MPG)')
     plt.xlabel('TIME')
     plt.title('CHANGE OF MPG OVER TIME')
     plt.tight_layout()
     plt.savefig("mustard_mpg_time.pdf")
+    plt.close()
     #
     # fill in function body here
     #
@@ -386,39 +388,28 @@ def plot_betweens(rows):
     i = 1
     while i < len(rows):
         if rows[i][0] == date.min:
-            arr_days.append((rows[i+1][0]-rows[i-1][0]).days)
+            arr_days.append((rows[i + 1][0] - rows[i - 1][0]).days)
             i += 2
             continue
-        arr_days.append((rows[i][0]-rows[i-1][0]).days)
+        arr_days.append((rows[i][0] - rows[i - 1][0]).days)
         i += 1
     sns.set();
     sns.distplot(arr_days)
     plt.title('DENSITY PLOT OF THE NUMBER OF DAYS BETWEEN REFUELING ENTRIES')
     plt.tight_layout()
     plt.savefig('mustard_in_between_days.pdf')
-    #print(arr_days)
+    plt.close()
+    # print(arr_days)
     #
     # fill in function body here
     #
 
 
-
-
 #########################
 
 if __name__ == '__main__':
-    #data_file_name = sys.argv[1]
-    #main(data_file_name)
-    data = read_data()
-    total_cost(data)
-    least_common_locs(data)
-    most_common_locs(data)
-    state_totals(data)
-    unique_dates(data)
-    month_avg(data)
-    highest_thirty(data)
-    plot_monthly(data)
-    plot_mpg(data)
-    plot_betweens(data)
-
-
+    # data_file_name = sys.argv[1]
+    # main(data_file_name)
+    plot_betweens(read_data())
+    plot_monthly(read_data())
+    plot_mpg(read_data())
