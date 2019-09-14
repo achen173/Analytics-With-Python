@@ -408,8 +408,8 @@ def plot_betweens(rows):
 #########################
 
 if __name__ == '__main__':
-    # data_file_name = sys.argv[1]
-    # main(data_file_name)
-    plot_betweens(read_data())
-    plot_monthly(read_data())
-    plot_mpg(read_data())
+    data_file_name = sys.argv[1]
+    main(data_file_name)
+    #plot_betweens(read_data())
+    #plot_monthly(read_data())
+    #plot_mpg(read_data())
