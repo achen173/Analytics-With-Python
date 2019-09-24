@@ -358,12 +358,14 @@ def plot_mpg(rows):
     print("\nExercise 9:")
     dates = []
     values = []
-    for x in rows:
-        if (x[0] != date.min and x[1] != 0 and x[3] != 0):
-            if (x[1] / x[3]) > 20000:
-                print(x)
-            dates.append(x[0])
-            values.append(x[1] / x[3])
+    var = 1
+    while var < len(rows):
+        if (rows[var-1][0] != date.min and rows[var][0] != date.min):
+            if(rows[var-1][1] != 0 and rows[var][1] != 0):
+                if (rows[var-1][3] != 0 and rows[var][3] != 0):
+                    dates.append(rows[var-1][0])
+                    values.append((rows[var][1]-rows[var-1][1]) / rows[var][3])
+        var += 1
     plt.plot(dates, values)
     plt.ylabel('AVERAGE MILES PER GALLON (MPG)')
     plt.xlabel('TIME')
@@ -411,6 +413,3 @@ def plot_betweens(rows):
 if __name__ == '__main__':
     data_file_name = sys.argv[1]
     main(data_file_name)
-    #plot_betweens(read_data())
-    #plot_monthly(read_data())
-    #plot_mpg(read_data())
