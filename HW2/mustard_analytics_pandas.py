@@ -1,7 +1,8 @@
 #!/usr/bin/python
 import sys
 import pandas as pd
-import datetime as dt
+import calendar
+#import datetime as dt
   
 # CICS 397A Homework 2 Part II
 #  
@@ -42,11 +43,11 @@ def read_data(file_name):
     # fill in function body here
     #
     df = pd.read_csv(file_name)
-    df['date'] = pd.to_datetime(df['date'])
+    df['date'] = pd.to_datetime(df['date'].fillna(0))
     df['mileage'] = df['mileage'].fillna(0).astype(int)
     df['location'] = df['location'].fillna(0).astype(str)
     df['gallons'] = df['gallons'].fillna(0).astype(float)
-    df['cost'] = df['cost'].replace('[\$,]', '', regex=True).astype(float)
+    df['cost'] = df['cost'].replace('[\$,]', '', regex=True).fillna(0).astype(float)
     return df
 
 # Exercise 1. (15 points)
@@ -55,7 +56,7 @@ def read_data(file_name):
 # 
 def total_cost(df):
     print("\nExercise 1:")
-    print(df['cost'].sum())
+    print('${:,.2f}'.format(df['cost'].sum()))
     #
     # fill in function body here
     #
@@ -82,7 +83,7 @@ def least_common_locs(df):
 # 
 def most_common_locs(df):
     print("\nExercise 3:")
-    print(df['location'].value_counts()[:10])
+    print(df['location'].value_counts()[:10].to_string(header=None))
     #
     # fill in function body here
     #
@@ -99,7 +100,7 @@ def state_totals(df):
     print("\nExercise 4:")
     df['text_new1'] = [(x.split(","))[-1].strip(" ") for x in df['location']]
     df['text_new1'] = df['text_new1'][df['text_new1'] != '0']
-    print(df['text_new1'].value_counts())
+    print(df['text_new1'].value_counts().to_string(header=None))
 
 
 # Exercise 5. (15 points)
@@ -123,17 +124,20 @@ def unique_dates(df):
 #
 def month_avg(df):
     print("\nExercise 6:")
-
-    #
-    # fill in function body here
-    #
-
+    if (df['date'].count() != df['cost'].count()):
+        print("InCorrect Comparison")
+    for k in range(1, 13):
+        list2 = []
+        for (x,y) in zip(df['date'], df['cost']):
+            if x.month == k:
+                list2.append(y)
+        dfObj = pd.DataFrame(list2)
+        print('{} ${:,.2f}'.format(calendar.month_name[k], dfObj[0].mean()))
 
 #########################
 
 if __name__ == '__main__':
-    #data_file_name = sys.argv[1]
-    data_file_name = "mustard_data.csv"
+    data_file_name = sys.argv[1]
     main(data_file_name)
 
 
