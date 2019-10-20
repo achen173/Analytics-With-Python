@@ -56,11 +56,12 @@ def read_data(file_name):
 # 
 def total_cost(df):
     print("\nExercise 1:")
+    #print(df['cost'].sum())
     print('${:,.2f}'.format(df['cost'].sum()))
     #
     # fill in function body here
     #
-    return df['cost'].sum()
+    #return df['cost'].sum()
 
 # Exercise 2. (15 points)
 #
@@ -68,8 +69,10 @@ def total_cost(df):
 # 
 def least_common_locs(df):
     print("\nExercise 2:")
+    i = 0
     for x in (df['location'].value_counts()[df['location'].value_counts() == 1].index):
-        print(x)
+        i += 1
+    print(i)
     #
     # fill in function body here
     #
@@ -137,7 +140,8 @@ def month_avg(df):
 #########################
 
 if __name__ == '__main__':
-    data_file_name = sys.argv[1]
+    data_file_name = 'mustard_data.csv'
+    #data_file_name = sys.argv[1]
     main(data_file_name)
 
 
