@@ -69,10 +69,7 @@ def total_cost(df):
 # 
 def least_common_locs(df):
     print("\nExercise 2:")
-    i = 0
-    for x in (df['location'].value_counts()[df['location'].value_counts() == 1].index):
-        i += 1
-    print(i)
+    print(len(df['location'].value_counts()[df['location'].value_counts() == 1].index))
     #
     # fill in function body here
     #
