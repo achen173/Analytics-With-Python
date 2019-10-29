@@ -31,7 +31,9 @@ df_test = df_all.drop(df_train.index)
 
 def prob(df, class_name, class_val):
     num = df[df[class_name] == class_val]
-    return num.count() / df[class_name].count()
+    if(len(df[class_name]) == 0):
+        print("YOU DIVIDED BY ZERO!!!")
+    return len(num) / len(df[class_name])
     """
     Calculate the marginal probability of a class value in a dataframe.
 
@@ -43,13 +45,12 @@ def prob(df, class_name, class_val):
     Returns:
          P(class_val)
     """
-    #
-    # Fill in the function body
-    #
-    # return 0.42  # FIX THIS!
 
 
 def cond_prob(df, attr_name, attr_val, class_name, class_val):
+    den = df[df[class_name] == class_val]
+    num = den[den[attr_name] == attr_val]
+    return len(num) / len(den)
     """
     Calculate the conditional probability of an attribute value given class in a dataframe.
     
@@ -63,10 +64,6 @@ def cond_prob(df, attr_name, attr_val, class_name, class_val):
     Returns:
          P(attr_val | class_val)
     """
-    num = df[df[class_name] == class_val]
-    den = num[num[attr_name] == attr_val]
-    return num.count()/den.count()
-
 
 # Iterate over the training set
 labels = []
@@ -82,7 +79,8 @@ for index, row in df_test.iterrows():
         # Fill in the other terms in the posterior probability calculation and calculate P(class_value | attributes)
         #
 
-        p = 0.1884  # FIX THIS!
+        # p = 0.1884  # FIX THIS!
+        p = prob(df_train, "cyl", class_value)
         if p > best_p:
             best_p = p
             best_label = class_value
