@@ -129,14 +129,14 @@ def distance(row1, row2):
 if __name__ == '__main__':
 
     # grab some parameters from the command line, and show help if they're not all there
-    # if len(sys.argv) <= 3:
-    #     sys.exit("USAGE: " + sys.argv[0] + " path/to/congress_data.csv predict_col_name k")
-    # train_file_path = sys.argv[1]
-    # predict_col = sys.argv[2]
-    # k = int(sys.argv[3])
-    train_file_path = 'congress_data.csv'
-    predict_col = 'Vote119'
-    k = 150
+    if len(sys.argv) <= 3:
+        sys.exit("USAGE: " + sys.argv[0] + " path/to/congress_data.csv predict_col_name k")
+    train_file_path = sys.argv[1]
+    predict_col = sys.argv[2]
+    k = int(sys.argv[3])
+    # train_file_path = 'congress_data.csv'
+    # predict_col = 'Vote119'
+    # k = 150
 
     # read in the data file
     votes, class_vals = read_data(train_file_path, predict_col)
