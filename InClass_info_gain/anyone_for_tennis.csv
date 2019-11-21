@@ -1,0 +1,15 @@
+Day,Outlook,Temp,Humid,Wind,Tennis
+1,sunny,98,high,4,no
+2,sunny,95,high,9,yes
+3,overcast,92,high,5,yes
+4,rain,77,high,7,yes
+5,rain,50,normal,2,yes
+6,rain,61,normal,11,no
+7,overcast,59,normal,8,yes
+8,sunny,72,high,0,no
+9,sunny,62,normal,1,no
+10,rain,74,normal,4,yes
+11,sunny,73,normal,8,yes
+12,overcast,76,high,12,yes
+13,overcast,88,normal,5,no
+14,rain,70,high,10,no
