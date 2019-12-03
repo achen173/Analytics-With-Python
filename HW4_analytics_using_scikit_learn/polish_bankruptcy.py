@@ -2,8 +2,17 @@
 import sys
 import numpy as np
 import pandas as pd
-
-
+from sklearn import impute
+from sklearn.model_selection import train_test_split
+from sklearn import tree
+from sklearn.model_selection import KFold
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.naive_bayes import GaussianNB
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
+from sklearn import datasets, linear_model
+# from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import cross_val_score
 # Each of the steps defined in the main() function calls one or more of the functions stubbed out
 # below.  Fill in the function bodies below, paying attention to how they are called and what kinds
 # of values are returned.  Wherever possible, you should use tools from the scikit-learn codebase
@@ -13,6 +22,7 @@ def main(file_name):
     #
     # 0. Read in the data.  Store the attributes in a pandas DataFrame called x, and class values
     #    (last column) in a Series object called y.
+
     x, y = read_data(file_name)
 
     #
@@ -23,9 +33,8 @@ def main(file_name):
     #
     # 2. Split the imputed data into training and test sets, where 75% of the data is used for
     # training
-    x_train, x_test, y_train, y_test = None, None, None, None  # Change this line!
+    x_train, x_test, y_train, y_test = train_test_split(x_imp, y)
 
-    #
     # 3. Print out the class distributions for both training and test
     train_pos_count, train_neg_count = get_class_distrib(y_train)
     test_pos_count, test_neg_count = get_class_distrib(y_test)
@@ -80,81 +89,102 @@ def main(file_name):
 #
 
 def read_data(file_name):
-    x, y = None, None  # Delete this line!
-    #
-    # Fill in the function body
-    #
-    return x, y  # x is a DataFrame, y is a Series
+    #  Read in the data.  Store the attributes in a pandas DataFrame called x, and class values
+    #  (last column) in a Series object called y.
+    x = pd.read_csv(file_name)
+    newX = x.drop(['class'], axis=1)
+    y = x.iloc[:,-1]
+    return newX, y  # x is a DataFrame, y is a Series
 
 
 def impute_data(x):
-    x_imp = None  # Delete this line!
-    #
-    # Fill in the function body
-    #
-    return x_imp  # x is a numpy.array
+    # 1. Handle missing values in the data using an sklearn SimpleImputer.  The transformed
+    #    data should be stored in a numpy array x_imp.
+    x_imp = impute.SimpleImputer(missing_values=np.nan, strategy='constant', fill_value=0)
+    ans = x_imp.fit_transform(x)
+    return ans  # x is a numpy.array
 
 
 def get_class_distrib(class_labels):
-    pos, neg = None, None  # Delete this line!
-    #
-    # Fill in the function body
-    #
+    neg, pos = class_labels.value_counts() # 0 -> neg, 1->pos
     return pos, neg  # pos and neg are integer counts
 
-
 def learn_tree(x, y):
-    clf = None  # Delete this line!
-    #
-    # Fill in the function body
-    #
+    # 4. Learn a decision tree model and get its accuracy on both the training and test data
+    clf = tree.DecisionTreeClassifier()
+    clf = clf.fit(x, y)
     return clf  # clf is a tree classifier object
 
 
 def test_model(clf, x, y):
-    acc = None  # Delete this line!
-    #
-    # Fill in the function body
-    #
-    return acc  # acc is a float
+    myans = clf.predict(x)
+    theiry = y.to_numpy()
+    if len(myans) == len(theiry):
+        acc = np.sum(myans == theiry)
+    else:
+        print("Invalid Comparision")
+    return acc/len(myans)  # acc is a float
 
 
 def top_features(clf, col_names, num):
-    feat_scores = None  # Delete this line!
-    #
-    # Fill in the function body
-    #
-    return feat_scores  # feat_scores is a list of (feature name, float) tuples
+    mylist = [];
+    for x,y in zip(col_names, clf.feature_importances_):
+        mylist.append((x,y))
+    sortedlist = sorted(mylist, key=lambda x: x[1])
+    return sortedlist[len(sortedlist)-num:]  # feat_scores is a list of (feature name, float) tuples
 
 
 def learn_knn(x, y, k):
-    clf = None  # Delete this line!
-    #
-    # Fill in the function body
-    #
+    clf = KNeighborsClassifier(n_neighbors=k)
+    clf.fit(x, y)
     return clf  # clf is a knn classifier object
 
 
 def learn_knn_standard(x, y, k):
-    clf = None  # Delete this line!
-    #
-    # Fill in the function body
-    #
-    return clf  # clf is a pipeline object
+    stdScaler = StandardScaler()
+    clf = KNeighborsClassifier(n_neighbors=k)
+    model = Pipeline([('sel', stdScaler), ('clf', clf)])
+    pipeline = model.fit(x, y)
+    return pipeline  # clf is a pipeline object
 
+    # train_pos_count, train_neg_count = get_class_distrib(y_train)
+    # test_pos_count, test_neg_count = get_class_distrib(y_test)
+    # print("training class distrib: {:.2f}, {:.2f}".format(train_pos_count/len(y_train),
+    #                                                       train_neg_count/len(y_train)))
+    # print("test class distrib: {:.2f}, {:.2f}".format(test_pos_count/len(y_test),
+    #                                                   test_neg_count/len(y_test)))
+    #
+    # #
+    # # 4. Learn a decision tree model and get its accuracy on both the training and test data
+    # tree_clf = learn_tree(x_train, y_train)
+    # acc_train = test_model(tree_clf, x_train, y_train)
+    # acc_test = test_model(tree_clf, x_test, y_test)
+    # print("decision tree training acc: {:.4f}, test acc: {:.4f}".format(acc_train, acc_test))
 
 def crossval_tree(x, y, folds):
-    acc = None  # Delete this line!
-    #
-    # Fill in the function body
-    #
-    return acc  # acc is a float
+    # 8. Now repeat the classification process from exercise 4, using 10-fold cross-validation
+    #    instead of the single training/test split.
+    # 4. Learn a decision tree model and get its accuracy on both the training and test data
+    # tree_clf = learn_tree(x_train, y_train)
+    # acc_train = test_model(tree_clf, x_train, y_train)
+    # acc_test = test_model(tree_clf, x_test, y_test)
+    # print("decision tree training acc: {:.4f}, test acc: {:.4f}".format(acc_train, acc_test))
+
+    # kf = KFold(n_splits=folds)  # Define the split - into 2 folds
+    # for train, test in kf.split(y):
+    #     print("TRAIN:", train, "TEST:", test)
+    # test = 0
+    lasso = linear_model.Lasso()
+    y_pred = cross_val_score(lasso, x, y, cv=folds)
+    acc = [x for x in y_pred if x >0]
+    return len(acc)/len(y_pred) # acc is a float
 
 
 #########################
 
 if __name__ == '__main__':
-    data_file_name = sys.argv[1]
+    # data_file_name = sys.argv[1]
+    data_file_name = 'polish_bankruptcy_data.csv'
     main(data_file_name)
 
 

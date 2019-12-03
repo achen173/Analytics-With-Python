@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="57630314-cffb-49c6-a168-18398fbd642f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/InClass_scikit_learn_decision_tree/sklearn_cars.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW4_analytics_using_scikit_learn/polish_bankruptcy.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW4_analytics_using_scikit_learn/polish_bankruptcy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW4_analytics_using_scikit_learn/polish_bankruptcy_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/HW4_analytics_using_scikit_learn/polish_bankruptcy_data.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,37 +14,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/InClass_scikit_learn_decision_tree/mtcars.csv">
-          <provider selected="true" editor-type-id="csv-text-editor">
-            <state relative-caret-position="174">
-              <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-            </state>
-          </provider>
-          <provider editor-type-id="csv-table-editor">
-            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/InClass_scikit_learn_decision_tree/sklearn_cars.py">
+        <entry file="file://$PROJECT_DIR$/HW4_analytics_using_scikit_learn/polish_bankruptcy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="1658">
+              <caret line="185" column="6" selection-start-line="185" selection-start-column="6" selection-end-line="185" selection-end-column="6" />
               <folding>
-                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#18#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/InClass_info_gain/info_gain.py">
+        <entry file="file://$PROJECT_DIR$/HW2_analytics_using_panda_dataframe/mustard_analytics_pandas.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="37" />
+            <state relative-caret-position="2346">
+              <caret line="140" column="33" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="33" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#18#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -62,6 +51,10 @@
     <findStrings>
       <find>Hornet</find>
       <find>Valiant</find>
+      <find>,,</find>
+      <find>2062</find>
+      <find>4600</find>
+      <find>make_pipeline</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -75,14 +68,15 @@
         <option value="$PROJECT_DIR$/HW3_analytics_using_K-NN_ML/congress_knn2.py" />
         <option value="$PROJECT_DIR$/InClass_info_gain/info_gain.py" />
         <option value="$PROJECT_DIR$/InClass_scikit_learn_decision_tree/sklearn_cars.py" />
+        <option value="$PROJECT_DIR$/HW4_analytics_using_scikit_learn/polish_bankruptcy_data.csv" />
+        <option value="$PROJECT_DIR$/HW4_analytics_using_scikit_learn/polish_bankruptcy.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="787" />
-    <option name="y" value="23" />
-    <option name="width" value="1185" />
-    <option name="height" value="980" />
+    <option name="y" value="30" />
+    <option name="width" value="1334" />
+    <option name="height" value="1000" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -99,7 +93,7 @@
             <path>
               <item name="CICS397_analytics_using_python" type="b2602c69:ProjectViewProjectNode" />
               <item name="CICS397_analytics_using_python" type="462c0819:PsiDirectoryNode" />
-              <item name="InClass_info_gain" type="462c0819:PsiDirectoryNode" />
+              <item name="HW4_analytics_using_scikit_learn" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CICS397_analytics_using_python" type="b2602c69:ProjectViewProjectNode" />
@@ -130,7 +124,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.sklearn_cars">
+  <component name="RunManager" selected="Python.polish_bankruptcy">
     <configuration name="congress_knn" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CICS397" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -194,6 +188,27 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="polish_bankruptcy" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="CICS397" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/HW4_analytics_using_scikit_learn" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/HW4_analytics_using_scikit_learn/polish_bankruptcy.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="sklearn_cars" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CICS397" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -217,6 +232,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.polish_bankruptcy" />
         <item itemvalue="Python.sklearn_cars" />
         <item itemvalue="Python.info_gain" />
         <item itemvalue="Python.congress_knn" />
@@ -240,12 +256,12 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.165786" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17899604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.4093567" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.44444445" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -264,33 +280,13 @@
     <entry file="file://$PROJECT_DIR$/HW1/mustard_data.csv" />
     <entry file="file://$PROJECT_DIR$/HW1/README.txt" />
     <entry file="file://$PROJECT_DIR$/HW1/mustard_analytics.py" />
-    <entry file="file://$PROJECT_DIR$/InClass_info_gain/mtcars.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InClass_info_gain/anyone_for_tennis.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/InClass_info_gain/mtcars.csv" />
+    <entry file="file://$PROJECT_DIR$/InClass_info_gain/anyone_for_tennis.csv" />
     <entry file="file://$PROJECT_DIR$/HW3_analytics_using_K-NN_ML/congress_data.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HW3_analytics_using_K-NN_ML/congress_knn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="131" column="22" selection-start-line="131" selection-start-column="22" selection-end-line="131" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/HW3_analytics_using_K-NN_ML/congress_knn_part2.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -299,32 +295,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/InClass_scikit_learn_decision_tree/mtcars.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="174">
-          <caret line="11" column="49" lean-forward="true" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/InClass_info_gain/info_gain.py">
+    <entry file="file://$PROJECT_DIR$/InClass_info_gain/info_gain.py" />
+    <entry file="file://$PROJECT_DIR$/HW3_analytics_using_K-NN_ML/congress_knn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="37" />
+        <state relative-caret-position="2557">
+          <caret line="151" column="47" lean-forward="true" selection-start-line="151" selection-start-column="47" selection-end-line="151" selection-end-column="47" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/HW4_analytics_using_scikit_learn/polish_bankruptcy_data.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="457" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/InClass_scikit_learn_decision_tree/sklearn_cars.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/InClass_scikit_learn_decision_tree/mtcars.csv">
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+      <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="13" lean-forward="true" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HW4_analytics_using_scikit_learn/polish_bankruptcy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1658">
+          <caret line="185" column="6" selection-start-line="185" selection-start-column="6" selection-end-line="185" selection-end-column="6" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#18#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HW2_analytics_using_panda_dataframe/mustard_analytics_pandas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2346">
+          <caret line="140" column="33" selection-start-line="140" selection-start-column="33" selection-end-line="140" selection-end-column="33" />
+          <folding>
+            <element signature="e#18#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
