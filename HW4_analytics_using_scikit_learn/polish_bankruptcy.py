@@ -147,35 +147,9 @@ def learn_knn_standard(x, y, k):
     pipeline = model.fit(x, y)
     return pipeline  # clf is a pipeline object
 
-    # train_pos_count, train_neg_count = get_class_distrib(y_train)
-    # test_pos_count, test_neg_count = get_class_distrib(y_test)
-    # print("training class distrib: {:.2f}, {:.2f}".format(train_pos_count/len(y_train),
-    #                                                       train_neg_count/len(y_train)))
-    # print("test class distrib: {:.2f}, {:.2f}".format(test_pos_count/len(y_test),
-    #                                                   test_neg_count/len(y_test)))
-    #
-    # #
-    # # 4. Learn a decision tree model and get its accuracy on both the training and test data
-    # tree_clf = learn_tree(x_train, y_train)
-    # acc_train = test_model(tree_clf, x_train, y_train)
-    # acc_test = test_model(tree_clf, x_test, y_test)
-    # print("decision tree training acc: {:.4f}, test acc: {:.4f}".format(acc_train, acc_test))
-
 def crossval_tree(x, y, folds):
-    # 8. Now repeat the classification process from exercise 4, using 10-fold cross-validation
-    #    instead of the single training/test split.
-    # 4. Learn a decision tree model and get its accuracy on both the training and test data
-    # tree_clf = learn_tree(x_train, y_train)
-    # acc_train = test_model(tree_clf, x_train, y_train)
-    # acc_test = test_model(tree_clf, x_test, y_test)
-    # print("decision tree training acc: {:.4f}, test acc: {:.4f}".format(acc_train, acc_test))
-
-    # kf = KFold(n_splits=folds)  # Define the split - into 2 folds
-    # for train, test in kf.split(y):
-    #     print("TRAIN:", train, "TEST:", test)
-    # test = 0
-    lasso = linear_model.Lasso()
-    y_pred = cross_val_score(lasso, x, y, cv=folds)
+    KNN = KNeighborsClassifier()
+    y_pred = cross_val_score(KNN, x, y, cv=folds)
     acc = [x for x in y_pred if x >0]
     return len(acc)/len(y_pred) # acc is a float
 
@@ -183,8 +157,8 @@ def crossval_tree(x, y, folds):
 #########################
 
 if __name__ == '__main__':
-    # data_file_name = sys.argv[1]
-    data_file_name = 'polish_bankruptcy_data.csv'
+    data_file_name = sys.argv[1]
+    # data_file_name = 'polish_bankruptcy_data.csv'
     main(data_file_name)
 
 
