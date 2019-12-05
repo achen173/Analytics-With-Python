@@ -150,15 +150,15 @@ def learn_knn_standard(x, y, k):
 def crossval_tree(x, y, folds):
     KNN = KNeighborsClassifier()
     y_pred = cross_val_score(KNN, x, y, cv=folds)
-    acc = [x for x in y_pred if x >0]
-    return len(acc)/len(y_pred) # acc is a float
+    acc = [x for x in y_pred if x > 0]
+    return sum(acc)/len(acc) # acc is a float
 
 
 #########################
 
 if __name__ == '__main__':
-    data_file_name = sys.argv[1]
-    # data_file_name = 'polish_bankruptcy_data.csv'
+    # data_file_name = sys.argv[1]
+    data_file_name = 'polish_bankruptcy_data.csv'
     main(data_file_name)
 
 
