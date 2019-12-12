@@ -157,8 +157,8 @@ def crossval_tree(x, y, folds):
 #########################
 
 if __name__ == '__main__':
-    # data_file_name = sys.argv[1]
-    data_file_name = 'polish_bankruptcy_data.csv'
+    data_file_name = sys.argv[1]
+    # data_file_name = 'polish_bankruptcy_data.csv'
     main(data_file_name)
 
 

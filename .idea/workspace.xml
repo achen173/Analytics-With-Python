@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="57630314-cffb-49c6-a168-18398fbd642f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HW4_analytics_using_scikit_learn/polish_bankruptcy.py" beforeDir="false" afterPath="$PROJECT_DIR$/HW4_analytics_using_scikit_learn/polish_bankruptcy.py" afterDir="false" />
-    </list>
+    <list default="true" id="57630314-cffb-49c6-a168-18398fbd642f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,11 +89,6 @@
             <path>
               <item name="CICS397_analytics_using_python" type="b2602c69:ProjectViewProjectNode" />
               <item name="CICS397_analytics_using_python" type="462c0819:PsiDirectoryNode" />
-              <item name="HW4_analytics_using_scikit_learn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CICS397_analytics_using_python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CICS397_analytics_using_python" type="462c0819:PsiDirectoryNode" />
               <item name="InClass_scikit_learn_decision_tree" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -108,7 +100,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Stock_Analysis" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
@@ -255,7 +247,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17899604" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17899604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -282,10 +274,10 @@
     <entry file="file://$PROJECT_DIR$/InClass_info_gain/mtcars.csv" />
     <entry file="file://$PROJECT_DIR$/InClass_info_gain/anyone_for_tennis.csv" />
     <entry file="file://$PROJECT_DIR$/HW3_analytics_using_K-NN_ML/congress_data.csv">
+      <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/HW3_analytics_using_K-NN_ML/congress_knn_part2.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -320,13 +312,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/InClass_scikit_learn_decision_tree/mtcars.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
       <provider selected="true" editor-type-id="csv-text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
         </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HW4_analytics_using_scikit_learn/polish_bankruptcy.py">
