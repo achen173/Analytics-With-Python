@@ -2,4 +2,4 @@
 
 Each directory contains different ways to analyze data
 
-The type of analtyics is within the directory name
+The types of analtyics are within the directory name
